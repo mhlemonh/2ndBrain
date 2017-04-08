@@ -22,8 +22,8 @@ menu:
     url: '/'
   - title: 'Github'
     url: 'https://github.com/mhlemonh'
-  - title: 'Tags'
-    url: '/tags'
+#  - title: 'Tags'
+#    url: '/tags'
   - title: 'Categories'
     url: '/categories'
     type: 'categories'
@@ -81,7 +81,7 @@ permalink:   /:categories/:title/
 paginate: 5
 
 # if true, shows the floatting share buttons
-float_share: true
+float_share: false
 
 # Octopress
 # Default extensions
