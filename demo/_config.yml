@@ -1,9 +1,9 @@
-title:            第二個腦
-description:      幫我記住各種東西
+title:            Blog Title
+description:      Describe your website here.
 
 # put your disqus here
 disqus_shortname:
-reading_time:     false # if true, shows the estimated reading time for a post
+reading_time:     true # if true, shows the estimated reading time for a post
 words_per_minute: 200
 logo:             images/logo.png # logo visible in the topbar
 excerpt_separator: <!--more-->
@@ -39,22 +39,28 @@ menu:
 
 # Owner/author information
 owner:
-  name:
+  name:           Your name
+  site:           http://aronbordin.com
   avatar:         images/avatar.jpg
-  bio:            "喜歡摸摸 code 的外行人"
+  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
+  email:          you@email.com
   # Twitter nick for use in Twitter cards and follow button.
-  # twitter: # if no twitter in this config, the twitter follow button will be removed
+  twitter: aron_bordin # if no twitter in this config, the twitter follow button will be removed
   # GitHub nick for use in follow button in author block.
-  github: mhlemonh
+  github: aron-bordin
 
 # Twitter account associated with the site if different from owner/author twitter account.
 # Used in Twitter cards.
-# twitter:
+twitter:
 
 # Social networking links used in author block underneath posts. Update and remove as you like.
-# social:
-#  - title: "linkedin"
-#    url: "https://br.linkedin.com/in/aronbordin"
+social:
+  - title: "github"
+    url: "https://github.com/aron-bordin"
+  - title: "linkedin"
+    url: "https://br.linkedin.com/in/aronbordin"
+  - title: "youtube"
+    url: "https://www.youtube.com/channel/UCfnSek-9HPWOx5e2pH7VFgg"
 
 # Background image to be tiled on all pages
 background:
@@ -66,8 +72,7 @@ google_verify:
 bing_verify:
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    Asia/Taipei
-
+timezone:    America/New_York
 locale:      en_US
 future:      true
 highlighter: rouge
@@ -96,6 +101,6 @@ page_layout: page
 titlecase: true
 
 include: [".htaccess"]
-exclude: ["demo/*", "lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
 gems: [jekyll-paginate]
 theme: neo-hpstr-jekyll-theme
