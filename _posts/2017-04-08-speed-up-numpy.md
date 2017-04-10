@@ -48,7 +48,7 @@ b1 = a[i] * 50
 # 快 42%, cost 0.0435 sec for 1,000 times
 b2 = a[::100] * 50
 {% endhighlight %}
-
+<!--
 ### 避免使用 Fancy indexing？
 雖然曾經有搜尋過使用`Fancy indexing`會比使用`np.take`慢。不過實際使用後，應該是因為版本更新，
 現在已經沒有速度差距了。
@@ -57,3 +57,4 @@ b2 = a[::100] * 50
 number = np.arange(100)
 minus =  np.extract(number<0, number)
 {% endhighlight %}
+-->
