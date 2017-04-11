@@ -37,9 +37,9 @@ Array View 指的是使用`foo[<start index>:<end index>:<spacing>]`方法來取
 a=np.arange(1000000)
 i=np.arange(0,1000000,100)
 
-# 比較慢, cost 0.0035 sec for 10,000 times
+# 比較慢, cost 0.4309 sec for 10,000 times
 b1 = a[i]
-# 快 99%, cost 0.4309 sec for 10,000 times
+# 快 99%, cost 0.0035 sec for 10,000 times
 b2 = a[::100]
 
 # 加上計算
