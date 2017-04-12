@@ -17,7 +17,7 @@ image:
 儘管 Numpy 本身已經是一個為了數值運算而生的 Module，不過有注意幾點就可以減少運作時間。
 我目前使用的版本是 1.11.0，有些運作模式會隨著版本更新進化，這點也要小心喔。
 
-#減少新矩陣的產生
+### 減少新矩陣的產生
 {% highlight python %}
 a = np.arange(1000000)
 # 比較慢
@@ -28,7 +28,16 @@ a += 1
 a[:] = a+1
 {% endhighlight %}
 
+### 選用執行速度快的方法
+
+1. 使用 'np.where' 取代
+
 {% highlight python %}
 number = np.arange(100)
 minus =  np.extract(number<0, number)
+{% endhighlight %}
+
+使用 代替flatten()指令
+{% highlight python %}
+number = np.flatten(100)
 {% endhighlight %}
