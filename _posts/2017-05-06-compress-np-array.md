@@ -37,15 +37,64 @@ Numpy 本身提供一個方法 `numpy.savez_compressed`[^2] 可以把 numpy.arra
 在原本的 Stack Overflow 中使用的是 `io.BytesIO` 來儲存。
 不過後來嘗試使用 `cStringIO.StringIO()` 發現它佔用的記憶體用量更少，或許自製 File like object 會更少吧？
 
+另外要注意的是如果資料本身是相異的話，壓縮的效果也會比較差
+
 [^2]: <https://docs.scipy.org/doc/numpy/reference/generated/numpy.savez_compressed.html#numpy.savez_compressed>
 
+### 解壓縮方法
+
+使用 `numpy.load` 來讀取，另外要注意的是 `IO` 類需要回到第一個位置開始讀取。
+所以要先使用 `.seek(0)`，回到起頭處開始讀取。
+
 {% highlight python %}
-a = io.BytesIO()
-b = cStringIO.StringIO()
+cmp_a = io.BytesIO()
+cmp_b = cStringIO.StringIO()
 
-print (sys.getsizeof(a), sys.getsizeof(b))
-# (96, 56)
+print (sys.getsizeof(cmp_a), sys.getsizeof(cmp_b))
+# obj mem size : (96, 56)
 
-def compress(nparray, b):
-    np.savez_compressed(b, nparray)
+def compress(nparray, cmp_b):
+    np.savez_compressed(cmp_b, nparray)
+
+
+def decompress(cmp_b):
+    cmp_b.seek(0)
+    return np.load(cmp_b)['arr_0']
+
+mem_cost_arr = np.array([10] * 200+[20] * 200+[18] * 200)
+sys.getsizeof(mem_cost_arr)
+# mem size : 4896
+
+compress(mem_cost_arr, cmp_b)
+cmp_b.seek(0)
+sys.getsizeof(cmp_b.read())
+# mem size : 266
+
+decmp_arr = decompress(cmp_b)
+
+all(mem_cost_arr == decmp_arr)
+# True
+
+{% endhighlight %}
+
+### 測試資料重複性較低的資料
+
+{% highlight python %}
+
+np.random.seed(9453)
+rnd_arr = np.random.randint(-10000, 10000, size=(600))
+
+sys.getsizeof(rnd_arr)
+# mem size : 4896
+
+compress(rnd_arr, cmp_b)
+cmp_b.seek(0)
+sys.getsizeof(cmp_b.read())
+# mem size : 1951
+
+decmp_arr = decompress(cmp_b)
+
+all(mem_cost_arr == decmp_arr)
+# True
+
 {% endhighlight %}
