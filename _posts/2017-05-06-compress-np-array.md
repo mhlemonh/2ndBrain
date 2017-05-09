@@ -68,7 +68,7 @@ sys.getsizeof(mem_cost_arr)
 compress(mem_cost_arr, cmp_b)
 cmp_b.seek(0)
 sys.getsizeof(cmp_b.read())
-# mem size : 266
+# mem size : 266, 壓縮率：94.7 %
 
 decmp_arr = decompress(cmp_b)
 
@@ -90,7 +90,7 @@ sys.getsizeof(rnd_arr)
 compress(rnd_arr, cmp_b)
 cmp_b.seek(0)
 sys.getsizeof(cmp_b.read())
-# mem size : 1951
+# mem size : 1951, 壓縮率：60.2 %
 
 decmp_arr = decompress(cmp_b)
 
