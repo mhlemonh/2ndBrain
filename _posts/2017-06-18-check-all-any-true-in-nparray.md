@@ -124,7 +124,7 @@ if __name__ == '__main__':
     print '--- build in ---'
     print timeit("test01(arr_to_check)", setup=setup, number = runtimes)
     print timeit("test02(arr_to_check)", setup=setup, number = runtimes)
-    print '--- mine ---'
+    print '--- indexing ---'
     print timeit("test03(arr_to_check)", setup=setup, number = runtimes)
     print timeit("test04(arr_to_check)", setup=setup, number = runtimes)
     print '--- Numpy ---'
@@ -135,7 +135,7 @@ if __name__ == '__main__':
     print '--- build in ---'
     print timeit("test01(arr_to_check)", setup=setup1, number = runtimes)
     print timeit("test02(arr_to_check)", setup=setup1, number = runtimes)
-    print '--- mine ---'
+    print '--- indexing ---'
     print timeit("test03(arr_to_check)", setup=setup1, number = runtimes)
     print timeit("test04(arr_to_check)", setup=setup1, number = runtimes)
     print '--- Numpy ---'
