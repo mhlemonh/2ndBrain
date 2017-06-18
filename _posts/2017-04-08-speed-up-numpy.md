@@ -2,7 +2,7 @@
 layout: post
 title: "如何最佳化 Numpy 執行效率"
 modified:
-categories: [Python]
+categories: [Python, 效率]
 description:
 tags: [Numpy, Python]
 image:

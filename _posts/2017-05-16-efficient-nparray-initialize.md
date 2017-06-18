@@ -2,7 +2,7 @@
 layout: post
 title: "高效率的初始化 Numpy array"
 modified:
-categories: [Python]
+categories: [Python, 效率]
 description:
 tags: [numpy, Python]
 image:

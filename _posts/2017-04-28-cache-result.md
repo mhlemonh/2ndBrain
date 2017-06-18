@@ -2,7 +2,7 @@
 layout: post
 title: "暫存執行結果來加快執行速度"
 modified:
-categories: [Python]
+categories: [Python, 效率]
 description:
 tags: [cache, Python]
 image:
