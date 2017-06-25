@@ -3,7 +3,7 @@ description:      幫我記住各種東西
 
 # put your disqus here
 disqus_shortname:
-reading_time:     true # if true, shows the estimated reading time for a post
+reading_time:     false # if true, shows the estimated reading time for a post
 words_per_minute: 200
 logo:             images/logo.png # logo visible in the topbar
 excerpt_separator: <!--more-->
