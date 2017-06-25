@@ -76,44 +76,44 @@ num_of_true = np.count_nonzero(arr_to_check)
 import numpy as np
 from timeit import timeit
 
-def test01(a):
+def build_in_any(a):
     return any(a)
-def test02(a):
+def build_in_all(a):
     return all(a)
-def test03(a):
+def index_any(a):
     _=np.empty(len(a))
     return bool(len(_[a]))
-def test04(a):
+def index_all(a):
     _=np.empty(len(a))
     return len(a) == len(_[a])
-def test05(a):
+def count_any(a):
     _=np.count_nonzero(a)
     return bool(_)
-def test06(a):
+def count_all(a):
     _=np.count_nonzero(a)
     return len(a) == _
 if __name__ == '__main__':
 
     runtimes = 1000
 
-    setup = "from __main__ import test01;\
-    from __main__ import test02;\
-    from __main__ import test03;\
-    from __main__ import test04;\
-    from __main__ import test05;\
-    from __main__ import test06;\
+    setup = "from __main__ import build_in_any;\
+    from __main__ import build_in_all;\
+    from __main__ import index_any;\
+    from __main__ import index_all;\
+    from __main__ import count_any;\
+    from __main__ import count_all;\
     import numpy as np;\
     true_num = np.random.randint(0,5);\
     true_location=np.random.randint(0,100000, size=true_num);\
     arr_to_check = np.full(100000, False, dtype=bool);\
     arr_to_check[true_location]=True"
 
-    setup1 = "from __main__ import test01;\
-    from __main__ import test02;\
-    from __main__ import test03;\
-    from __main__ import test04;\
-    from __main__ import test05;\
-    from __main__ import test06;\
+    setup1 = "from __main__ import build_in_any;\
+    from __main__ import build_in_all;\
+    from __main__ import index_any;\
+    from __main__ import index_all;\
+    from __main__ import count_any;\
+    from __main__ import count_all;\
     import numpy as np;\
     true_num = np.random.randint(0,5);\
     true_location=np.random.randint(0,100000, size=true_num);\
@@ -122,23 +122,23 @@ if __name__ == '__main__':
 
 
     print '--- build in ---'
-    print timeit("test01(arr_to_check)", setup=setup, number = runtimes)
-    print timeit("test02(arr_to_check)", setup=setup, number = runtimes)
+    print timeit("build_in_any(arr_to_check)", setup=setup, number = runtimes)
+    print timeit("build_in_all(arr_to_check)", setup=setup, number = runtimes)
     print '--- indexing ---'
-    print timeit("test03(arr_to_check)", setup=setup, number = runtimes)
-    print timeit("test04(arr_to_check)", setup=setup, number = runtimes)
+    print timeit("index_any(arr_to_check)", setup=setup, number = runtimes)
+    print timeit("index_all(arr_to_check)", setup=setup, number = runtimes)
     print '--- Numpy ---'
-    print timeit("test05(arr_to_check)", setup=setup, number = runtimes)
-    print timeit("test06(arr_to_check)", setup=setup, number = runtimes)
+    print timeit("count_any(arr_to_check)", setup=setup, number = runtimes)
+    print timeit("count_all(arr_to_check)", setup=setup, number = runtimes)
 
     print '***'
     print '--- build in ---'
-    print timeit("test01(arr_to_check)", setup=setup1, number = runtimes)
-    print timeit("test02(arr_to_check)", setup=setup1, number = runtimes)
+    print timeit("build_in_any(arr_to_check)", setup=setup1, number = runtimes)
+    print timeit("build_in_all(arr_to_check)", setup=setup1, number = runtimes)
     print '--- indexing ---'
-    print timeit("test03(arr_to_check)", setup=setup1, number = runtimes)
-    print timeit("test04(arr_to_check)", setup=setup1, number = runtimes)
+    print timeit("index_any(arr_to_check)", setup=setup1, number = runtimes)
+    print timeit("index_all(arr_to_check)", setup=setup1, number = runtimes)
     print '--- Numpy ---'
-    print timeit("test05(arr_to_check)", setup=setup1, number = runtimes)
-    print timeit("test06(arr_to_check)", setup=setup1, number = runtimes)
+    print timeit("count_any(arr_to_check)", setup=setup1, number = runtimes)
+    print timeit("count_all(arr_to_check)", setup=setup1, number = runtimes)
 {% endhighlight %}
