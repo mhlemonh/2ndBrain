@@ -25,8 +25,8 @@ image:
 
 ***
 
-下面是查到的幾種作法：
-#### 1. 計算過程中儲存結果
+下面是查到的作法：
+#### 計算過程中儲存結果
 {% highlight python %}
 input = np.random.randint(1, 5, size=(3,1000))
 

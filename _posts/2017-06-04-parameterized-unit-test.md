@@ -27,6 +27,7 @@ date: 2017-06-04T23:06:51+08:00
 ***
 要開始進行的話當然要先建立一個 `Test case`, 而且必須繼承自 `ParametrizedTestCase`.
 而 `ParametrizedTestCase`的程式碼，請進入 [原作者的Blog](http://eli.thegreenplace.net/2011/08/02/python-unit-testing-parametrized-test-cases/) 看看吧
+<!--more-->
 {% highlight python %}
 class TestNeedPara(ParametrizedTestCase):
   def test_A(self):

@@ -30,7 +30,7 @@ a = a+1
 # 快一些, cost 0.9906 sec for 1,000 times
 a[:] = a+1
 {% endhighlight %}
-
+<!--more-->
 ### 使用 Array View
 Array View 指的是使用`foo[<start index>:<end index>:<spacing>]`方法來取用數值。
 不過加上一些運算後差距就沒那麼顯著了。

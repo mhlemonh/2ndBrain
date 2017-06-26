@@ -28,7 +28,7 @@ image:
 這次針對壓縮解壓縮來嘗試，搜尋到的原始教學是從 Stack Overflow[^1] 找到的。
 
 [^1]: <http://stackoverflow.com/questions/39035983/compress-zip-numpy-arrays-in-memory>
-
+<!--more-->
 ### 壓縮方法
 
 Numpy 本身提供一個方法 `numpy.savez_compressed`[^2] 可以把 numpy.array 以壓縮的格式

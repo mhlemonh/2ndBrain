@@ -24,7 +24,7 @@ date: 2017-06-18T21:06:51+08:00
 ### 計算 True 的個數
 因為 `numpy` 的 `bool array` 可以用來 `indexing`，那數數看到底取出幾個 item 也就可以用來判斷有幾個 True 了！
 而且結果可以直接丟進判斷式，一舉兩得。
-
+<!--more-->
 {% highlight python %}
 arr_to_check = np.random.randint(0,2, size=100000, dtype=bool)
 _ = np.empty(len(array_to_check))
