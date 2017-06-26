@@ -13,7 +13,8 @@
 {% include header.html %}
 
 <div id="main" role="main">
-  {{ content }}
+  {% include excerpt_post.html %}
+  {% include pagination.html %}
 </div><!-- /#main -->
 
 {% include scripts.html %}
