@@ -1,15 +1,23 @@
 {% for post in paginator.posts %}
 <article class="hentry">
   <header>
+    {% if post.image %}
+    <div class="entry-image-index">
+        <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}"><img src="{{ site.url }}/images/{{ post.image.feature }}" alt="{{ post.title }}"></a>
+        <div class="image-credit">Image source: <a target="_blank" href="{{ post.image.creditlink }}">{{ post.image.credit }}</a>
+        </div>
+        <!-- /.image-credit -->
+    </div>
+    {% endif %}
     <div class="entry-meta">
       <span class="entry-date date published updated">
         <time datetime="">
-          <a href="{{ post.url }}">{{ post.date | date: "%b %-d, %Y" }}</a>
+          <a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%b %-d, %Y" }}</a>
         </time>
       </span>
     </div><!-- /.entry-meta -->
     <h1 class="entry-title">
-      <a href="{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a>
+      <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a>
     </h1>
   </header>
   <div class="entry-content">
@@ -21,7 +29,7 @@
       {{ post.excerpt | number_of_words }}
     {% endcapture %}
     {% if excerpt_words != content_words %}
-      <p><a class="btn btn-sm btn-primary readmore" href="{{ post.url }}" role="button" style="float: right;">Read more &nbsp;&nbsp;<i class="fa fa-chevron-circle-right"></i></a></p>
+      <p><a class="btn btn-sm btn-primary readmore" href="{{ site.url }}{{ post.url }}" role="button" style="float: right;">Read more &nbsp;&nbsp;<i class="fa fa-chevron-circle-right"></i></a></p>
     {% endif %}
   </div>
 </article>
