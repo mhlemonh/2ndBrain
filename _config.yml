@@ -27,17 +27,10 @@ menu:
   - title: 'Categories'
     url: '/categories'
     type: 'categories'
-#  - title: 'Favorites'
-#    url: '#'
-#    submenu:
-#      - title: 'Code Highlighter'
-#        url: '/intro/code-highlighting-post/'
-#      - title: 'Sample Post'
-#        url: '/intro/sample-post/'
 
 # Owner/author information
 owner:
-  name:
+  name:     Lemon
   avatar:
   bio:            "喜歡摸摸 code 的外行人"
   # Twitter nick for use in Twitter cards and follow button.
