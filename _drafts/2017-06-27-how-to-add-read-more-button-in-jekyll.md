@@ -22,13 +22,13 @@ date: 2017-06-27T22:13:16+08:00
 
 ### 旅程摘要
 
-1. 確認 `excerpt_separator` 作用的區域
+1. 確認 `excerpt_separator` 的運作方法
 {% raw %}
 2. 找不到 `{{ content }}` 的取代檔案，只好重寫 `home.html` 來修改產生 `Read more` 按鈕的區塊
 {% endraw %}
 3. 影響到其他使用 `home layout` 頁面拉，大爆炸。快分開頁面的關聯。
 {% raw %}
-4. 發現 `{{ content }}` 的取用邏輯！
+4. 發現 `home.html` 是 layout 要修改的應該是！
 {% endraw %}
 5. 減少修改數量，去除額外的 `layout`，完成！
 
@@ -36,9 +36,18 @@ date: 2017-06-27T22:13:16+08:00
 
 接下來我一步步走歪了，不過我有多學到一些就是了。看解法直接到[這邊](#anchor).
 
-### 確認 `excerpt_separator` 作用的區域
+### 確認 `excerpt_separator` 運作方法
+
+在 Jekyll 中是使用 [Liquid template language](https://shopify.github.io/liquid/)
+來動態讀取內容再產生頁面。而設定 `excerpt_separator` {% raw %}會使的 `{{ post.content }}`
+與 `{{ post.excerpt }}` {% endraw %}產生差異，分別顯示全文和顯示`excerpt_separator`前的摘要文字。
 
 ### 重寫 `home.html` 來修改產生 `Read more` 按鈕的區塊
+
+但是我那都找不到 {% raw %} `{{ post.excerpt }}` {% endraw %}出現的地方。在 `home.html`
+裡面就只有{% raw %} `{{ content }} ` {% endraw %}存在，只好把 `home.html` 重寫。
+
+> 這邊是錯誤的，`home.html` 是 layout，用來讓 `index.html` 等參考的頁面。所以應該修改的是 `index.html`。
 
 ### 影響到其他使用 `home layout` 頁面
 
