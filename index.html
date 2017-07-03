@@ -32,18 +32,12 @@ comments: false
     {% endif %}
   </header>
   <div class="entry-content">
-      {{ post.excerpt }}
-      {% capture content_words %}
-        {{ post.content | number_of_words }}
-      {% endcapture %}
-      {% capture excerpt_words %}
-        {{ post.excerpt | number_of_words }}
-      {% endcapture %}
-      {% if excerpt_words != content_words %}
-          <div align="right">
-              <div markdown="0"><a href="{{ site.url }}{{ post.url }}" class="btn btn-primary">Read more ...</a></div>
-          </div>
-      {% endif %}
+    {{ post.excerpt}}
+    {% if post.content contains "<!--more-->" %}
+      <div align="right">
+        <div markdown="0"><a href="{{ site.url }}{{ post.url }}" class="btn btn-primary">Read more ...</a></div>
+      </div>
+    {% endif %}
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
 {% endfor %}
