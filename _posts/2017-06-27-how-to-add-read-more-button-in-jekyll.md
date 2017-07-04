@@ -2,7 +2,7 @@
 layout: post
 title: 如何在 Jekyll 中加入 Read more 按鈕
 modified:
-categories: Blog
+categories: [Blog]
 description:
 tags: [Jekyll]
 image:
@@ -81,7 +81,7 @@ date: 2017-06-27T22:13:16+08:00
 更詳細內容在[怎麼發表/寫文章](https://jekyllrb.com/docs/posts/)，
 和[Template的用法](https://jekyllrb.com/docs/templates/)。
 
-接下來就是程式碼的邏輯部份，完整的內容可以看這個主題的[index.html](https://github.com/aron-bordin/neo-hpstr-jekyll-theme/blob/master/index.html)
+接下來就是簡化的程式碼，完整的內容可以看這個主題的[index.html](https://github.com/aron-bordin/neo-hpstr-jekyll-theme/blob/master/index.html)
 {% highlight html %}
 {% raw %}
 <ul>
