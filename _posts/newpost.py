@@ -1,4 +1,5 @@
-import os
+#!/usr/bin/python
+
 import sys
 import time
 
@@ -29,4 +30,5 @@ date: {}
 		newpost.write(init_content)
 
 if __name__ == '__main__':
-	creat_newpost('efficient way to loop np array')
+	post_name = sys.argv[1]
+	creat_newpost(post_name)
